@@ -27,8 +27,6 @@
 </template>
 
 <script>
-//import { blob } from 'stream/consumers'
-//import { accountService } from '@/service/account.service'
 import axios from 'axios'
 export default {
     name: 'login',
@@ -52,33 +50,8 @@ export default {
                 "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
                 "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With"
             };
-
             const response = await axios.post("http://localhost:8085/api/users/register/", this.user);
-            //const userId = response;
-
-            console.log(response);
-            /*accountService.login(this.user)
-            .then(res => {
-                console.log(res);
-            })
-            .catch(err => console.log(err))
-      fetch('http://localhost:8085/auth/login'), {
-            headers: {
-                'Accept' : 'apllication/json',
-                'Content-Type' : 'application/json' 
-            },
-            method: 'POST',
-            body: JSON.stringify(this.user)
-       }
-       .then(blob => blob.json())
-       .then(data => {
-        console.log(data)
-        localStorage.setItem('token', data.access_token)
-        this.$router.push('/')
-       })
-       .catch(err => console.log(err))
-        console.log(this.user)*/
-        
+            console.log(response);     
         }
     }
 }
